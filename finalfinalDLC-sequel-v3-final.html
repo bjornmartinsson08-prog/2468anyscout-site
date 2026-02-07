@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FRC Team 2468 | AnyScout</title>
+  
+  <!-- Link to external CSS file -->
+  <link rel="stylesheet" href="csscss.css">
+
+  <!-- GSAP and ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+  <!-- FLOATING BUBBLES (background) -->
+  <div class="bubble bubble1"></div>
+  <div class="bubble bubble2"></div>
+  <div class="bubble bubble3"></div>
+  <div class="bubble bubble4"></div>
+  <div class="bubble bubble5"></div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo-container">
+      <!-- NEW LOGO IMAGE TO THE LEFT OF THE TEXT -->
+      <img src="https://i.imgur.com/FjB4NhP.png" alt="Team 2468 Logo" class="team-logo">
+      <h1>FRC Team 2468</h1>
+    </div>
+    <nav>
+      <a href="#anyscout">AnyScout</a>
+      <a href="#why">Why AnyScout?</a>
+      <a href="#benefits">Benefits</a>
+      <a href="#returning-users">Returning Users</a>
+
+      <button onclick="window.open('https://drive.google.com/drive/u/0/folders/1nnYMc0Zm3EEYnsnFAHZcHqgaJOQH90cl','_blank')">AnyScout Docs</button>
+      <button onclick="window.open('https://rld.one/','_blank')">Get Started</button>
+      <button onclick="window.open('https://www.frc2468.org','_blank')">Team 2468 Site</button>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h2>Introducing AnyScout</h2>
+    <p>A robust data collection and analysis system tailored for all FRC teams, by FRC Team 2468.</p>
+    <button onclick="document.querySelector('#anyscout').scrollIntoView({behavior:'smooth'})">Learn More</button>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- (1) WHAT IS ANYSCOUT? -->
+    <section id="anyscout">
+      <h3>What is AnyScout?</h3>
+      <div class="content-block">
+        <div class="text">
+          <p>
+            AnyScout is a scouting system developed by FRC team 2468 to make the enriching and educational experience of data analysis accessible to all FRC teams. AnyScout provides teams with the ability to make information based decisions during alliance selection and develop match based strategies through a data collection and analysis solution. Our software consists of an input form that allows for comprehensive data capture across any device. For in depth-analysis, AnyScout offers pre-made calculations, graphs, and tables that create and display important info pertaining to teams and competitions.
+            Most of all, AnyScout is customizable, providing ample room for creativity and variation in your scouting app.
+          </p>
+        </div>
+        <div class="image">
+          <img src="https://i.imgur.com/FjB4NhP.png" alt="AnyScout Logo">
+        </div>
+      </div>
+    </section>
+
+    <!-- (2) WHY DID WE MAKE ANYSCOUT? -->
+    <section id="why">
+      <h3>Why did we make AnyScout?</h3>
+      <div class="content-block">
+        <div class="text">
+          <p>
+            Our hope with AnyScout is continuing to help teams break down barriers preventing them from participating in data analysis within an FRC setting. In our system, there is less hassle to set up an app, greater ease of access, and more room to innovate. By encouraging interest in scouting and data analysis, we strive to open eyes to a whole new world of FRC, allowing for deep engagement and strategy within matches.
+          </p>
+          <p>
+            Our aim is to unlock every team's full competitive potential by increasing access to data-based decision making. Join us by making your app here, and elevate your team's success on the playing field, and appreciate increased competition and enjoyment of FRC.
+          </p>
+        </div>
+        <div class="image">x
+          <img src="https://i.imgur.com/NzVBOBm.png" alt="Team 2468 Robot">
+        </div>
+      </div>
+    </section>
+
+    <!-- (3) WHY USE ANYSCOUT? -->
+    <section id="benefits">
+      <h3>Why use AnyScout?</h3>
+      <p>AnyScout comes with many advantages and conveniences:</p>
+      <ul>
+        <li>Works offline</li>
+        <li>Universal (works on any device)</li>
+        <li>Easily customizable</li>
+        <li>Easily accessible (just sign up with Google!)</li>
+        <li>Lots of help and documentation</li>
+        <li>Doesn't require a lot of time and effort</li>
+        <li>Integration with FIRST API</li>
+      </ul>
+      <p>See for yourself below!</p>
+    </section>
+
+    <!-- (4) RETURNING USERS -->
+    <section id="returning-users">
+      <h3>Returning Users</h3>
+      <div class="content-block">
+        <div class="text">
+          <p>
+            We value teaching data analysis skills and supporting each team's individuality in creating a scouting app to fit their specific needs. So, this year, we prioritized providing a solid foundation for teams to build on, allowing for ample room for our app to grow to fit each team's mold. We hope to encourage creativity while still providing software that can successfully provide data to any team.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <p>
+      © <span id="currentYear"></span> FRC Team 2468. Built with heart and passion to support the FRC community.
+      <br>
+      Visit
+      <a href="https://www.frcteam2468.org" target="_blank" rel="noopener noreferrer">
+        our official site
+      </a>
+      for more information.
+    </p>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    // SET CURRENT YEAR
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    // Register ScrollTrigger if using it
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Animate Hero Text (fade/slide in)
+    gsap.from(".hero h2", {
+      duration: 1.0,
+      y: 30,
+      opacity: 0,
+      delay: 0.3,
+      ease: "power3.out"
+    });
+
+    gsap.from(".hero p", {
+      duration: 1.0,
+      y: 30,
+      opacity: 0,
+      delay: 0.5,
+      ease: "power3.out"
+    });
+
+    gsap.from(".hero button", {
+      duration: 1.0,
+      y: 30,
+      opacity: 0,
+      delay: 0.7,
+      ease: "power3.out"
+    });
+
+    // Animate sections on scroll
+    gsap.utils.toArray("main section").forEach((section, i) => {
+      gsap.from(section, {
+        scrollTrigger: {
+          trigger: section,
+          start: "top 80%",
+          toggleActions: "play none none none"
+        },
+        duration: 1.2,
+        y: 40,
+        opacity: 0,
+        ease: "power3.out",
+        delay: i * 0.15
+      });
+    });
+
+    // Animate footer on scroll
+    gsap.from("footer", {
+      scrollTrigger: {
+        trigger: "footer",
+        start: "top 90%",
+        toggleActions: "play none none none"
+      },
+      duration: 1.2,
+      y: 40,
+      opacity: 0,
+      ease: "power3.out"
+    });
+  </script>
+</body>
+</html>
